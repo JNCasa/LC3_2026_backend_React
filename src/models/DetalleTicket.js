@@ -1,8 +1,8 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../db.js";
 
-export const TicketProducto = sequelize.define(
-  "TicketProducto",
+export const DetallesTicket = sequelize.define(
+  "DetallesTicket",
   {
     id_ticket: {
       type: DataTypes.INTEGER,
@@ -17,9 +17,14 @@ export const TicketProducto = sequelize.define(
       allowNull: false,
       validate: { min: 1 },
     },
+    importe: {
+      type: DataTypes.REAL,
+      allowNull: false,
+      validate: { min: Number.MIN_VALUE },
+    },
   },
   {
-    tableName: "Ticket_Producto",
+    tableName: "Tickets_Productos",
     timestamps: false,
   },
 );

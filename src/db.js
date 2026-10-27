@@ -7,4 +7,9 @@ export const sequelize = new Sequelize({
   dialect: "sqlite",
   storage: databasePath,
   logging: false,
+  hooks: {
+    afterConnect(connection) {
+      connection.configure("busyTimeout", 5000);
+    },
+  },
 });

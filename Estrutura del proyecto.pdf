@@ -1,0 +1,198 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Length 3772 >>
+stream
+1.000 1.000 1.000 rg 0 0 612 792 re f
+0.080 0.160 0.270 rg 0 692 612 100 re f
+1.000 1.000 1.000 rg BT /F2 25 Tf 1 0 0 1 44 748 Tm (Estructura del proyecto) Tj ET
+0.830 0.880 0.920 rg BT /F1 10 Tf 1 0 0 1 45 720 Tm (Backend de Dietetica - guia de carpetas, responsabilidades y flujo) Tj ET
+0.930 0.960 0.940 rg 42 668 528 24 re f
+0.160 0.430 0.310 rg 42 668 4 24 re f
+0.080 0.160 0.270 rg BT /F2 13 Tf 1 0 0 1 55 675 Tm (Vista general) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.6 Tf 1 0 0 1 56 646 Tm (El backend recibe solicitudes HTTP, valida autenticacion y permisos, ejecuta la logica de) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.6 Tf 1 0 0 1 56 632 Tm (negocio y consulta o modifica la base SQLite.) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 614 Tm (Recorrido) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 599 Tm (Cliente \(Postman o frontend\) -> routes/ -> middleware \(si la ruta es privada\)) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 586 Tm (-> services/ -> models/ -> dietetica.db.) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 569 Tm (Stack) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 554 Tm (Node.js ejecuta JavaScript; Express maneja rutas HTTP; Sequelize conecta los) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 541 Tm (modelos con SQLite; JWT autentica las solicitudes.) Tj ET
+0.930 0.960 0.940 rg 42 511 528 24 re f
+0.160 0.430 0.310 rg 42 511 4 24 re f
+0.080 0.160 0.270 rg BT /F2 13 Tf 1 0 0 1 55 518 Tm (Carpetas principales) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 489 Tm (src/) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 474 Tm (Codigo de la aplicacion: inicio del servidor, configuracion, conexion a base,) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 461 Tm (modelos, servicios y middleware.) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 444 Tm (routes/) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 429 Tm (Define los endpoints y conecta cada metodo HTTP con el servicio) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 416 Tm (correspondiente.) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 399 Tm (node_modules/) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 384 Tm (Dependencias instaladas por npm. No se edita a mano ni se sube a Git.) Tj ET
+0.930 0.960 0.940 rg 42 354 528 24 re f
+0.160 0.430 0.310 rg 42 354 4 24 re f
+0.080 0.160 0.270 rg BT /F2 13 Tf 1 0 0 1 55 361 Tm (Archivos de la raiz) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 332 Tm (package.json / package-lock.json) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 317 Tm (Dependencias del backend y versiones instaladas; tambien define comandos como) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 304 Tm (npm run dev y npm start.) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 287 Tm (.env / .env.example) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 272 Tm (Configuracion local \(puerto, origen frontend y JWT_SECRET\). El archivo .env) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 259 Tm (contiene secretos y no se comparte.) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 242 Tm (dietetica.db) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 227 Tm (Base de datos SQLite usada por el backend.) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 210 Tm (*.sql) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 195 Tm (Esquemas y scripts de migracion de la base; verificar y respaldar la base) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 182 Tm (antes de ejecutar una migracion.) Tj ET
+0.820 0.850 0.870 RG 0.7 w 42 46 m 570 46 l S
+0.380 0.430 0.480 rg BT /F1 8.5 Tf 1 0 0 1 44 29 Tm (Backend Dietetica | Node.js + Express + Sequelize + SQLite) Tj ET
+0.160 0.430 0.310 rg BT /F2 8.5 Tf 1 0 0 1 525 29 Tm (1) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >>
+endobj
+7 0 obj
+<< /Length 4286 >>
+stream
+1.000 1.000 1.000 rg 0 0 612 792 re f
+0.080 0.160 0.270 rg 0 692 612 100 re f
+1.000 1.000 1.000 rg BT /F2 25 Tf 1 0 0 1 44 748 Tm (Dentro de src/) Tj ET
+0.830 0.880 0.920 rg BT /F1 10 Tf 1 0 0 1 45 720 Tm (Configuracion, autenticacion, reglas de negocio y modelos de datos) Tj ET
+0.930 0.960 0.940 rg 42 668 528 24 re f
+0.160 0.430 0.310 rg 42 668 4 24 re f
+0.080 0.160 0.270 rg BT /F2 13 Tf 1 0 0 1 55 675 Tm (Configuracion y arranque) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 646 Tm (src/index.js) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 631 Tm (Crea la app Express, instala middleware comun, monta las rutas, conecta con) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 618 Tm (SQLite e inicia el servidor.) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 601 Tm (src/config.js) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 586 Tm (Lee y valida configuracion como PORT, FRONTEND_ORIGIN y JWT_SECRET.) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 569 Tm (src/db.js) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 554 Tm (Configura Sequelize y la conexion al archivo dietetica.db.) Tj ET
+0.930 0.960 0.940 rg 42 524 528 24 re f
+0.160 0.430 0.310 rg 42 524 4 24 re f
+0.080 0.160 0.270 rg BT /F2 13 Tf 1 0 0 1 55 531 Tm (Modelos: src/models/) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 502 Tm (Usuario.js) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 487 Tm (Representa la tabla Usuarios: email, hash de contrasena, rol y estado.) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 470 Tm (Producto.js) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 455 Tm (Representa Productos: nombre, precio, stock y otros datos del catalogo.) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 438 Tm (Ticket.js) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 423 Tm (Representa la cabecera de una compra: usuario, fecha y monto total.) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 406 Tm (DetalleTicket.js) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 391 Tm (Representa las lineas de Tickets_Productos: producto, cantidad e importe.) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 374 Tm (associations.js) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 359 Tm (Define relaciones entre usuarios, tickets, detalles y productos.) Tj ET
+0.930 0.960 0.940 rg 42 329 528 24 re f
+0.160 0.430 0.310 rg 42 329 4 24 re f
+0.080 0.160 0.270 rg BT /F2 13 Tf 1 0 0 1 55 336 Tm (Servicios: src/services/) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 307 Tm (auth.service.js) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 292 Tm (Registra clientes, comprueba credenciales, guarda contrasenas con bcrypt y) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 279 Tm (emite JWT.) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 262 Tm (user.service.js) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 247 Tm (Lista y administra usuarios; el administrador puede crear cuentas y cambiar) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 234 Tm (rol o estado.) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 217 Tm (product.service.js) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 202 Tm (Consulta y realiza ABM de productos, con validacion de los datos recibidos.) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 185 Tm (ticket.service.js) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 170 Tm (Crea y consulta compras, calcula importes y trabaja con transacciones para) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 157 Tm (conservar consistencia.) Tj ET
+0.930 0.960 0.940 rg 42 127 528 24 re f
+0.160 0.430 0.310 rg 42 127 4 24 re f
+0.080 0.160 0.270 rg BT /F2 13 Tf 1 0 0 1 55 134 Tm (Middleware: src/middleware/) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 105 Tm (auth.js) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 90 Tm (Lee Authorization: Bearer, verifica firma y vencimiento del JWT, confirma) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 77 Tm (cuenta/rol vigentes y aplica permisos.) Tj ET
+0.820 0.850 0.870 RG 0.7 w 42 46 m 570 46 l S
+0.380 0.430 0.480 rg BT /F1 8.5 Tf 1 0 0 1 44 29 Tm (Backend Dietetica | Node.js + Express + Sequelize + SQLite) Tj ET
+0.160 0.430 0.310 rg BT /F2 8.5 Tf 1 0 0 1 525 29 Tm (2) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 7 0 R >>
+endobj
+9 0 obj
+<< /Length 4273 >>
+stream
+1.000 1.000 1.000 rg 0 0 612 792 re f
+0.080 0.160 0.270 rg 0 692 612 100 re f
+1.000 1.000 1.000 rg BT /F2 25 Tf 1 0 0 1 44 748 Tm (Rutas, roles y uso) Tj ET
+0.830 0.880 0.920 rg BT /F1 10 Tf 1 0 0 1 45 720 Tm (Como se conectan los endpoints y como probarlos desde Postman) Tj ET
+0.930 0.960 0.940 rg 42 668 528 24 re f
+0.160 0.430 0.310 rg 42 668 4 24 re f
+0.080 0.160 0.270 rg BT /F2 13 Tf 1 0 0 1 55 675 Tm (Rutas: routes/) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 646 Tm (auth.routes.js) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 631 Tm (POST /api/auth/register y POST /api/auth/login son publicos; GET /api/auth/me) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 618 Tm (requiere JWT.) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 601 Tm (users.routes.js) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 586 Tm (GET y POST /api/Usuarios, y PATCH /api/Usuarios/:id: operaciones de) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 573 Tm (administracion de usuarios.) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 556 Tm (products.routes.js) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 541 Tm (GET /api/Productos y operaciones POST, PUT y DELETE para administrar el) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 528 Tm (catalogo.) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 511 Tm (tickets.routes.js) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 496 Tm (GET y POST /api/Tickets, mas GET /api/Tickets/:id y PUT /api/Tickets/:id.) Tj ET
+0.930 0.960 0.940 rg 42 466 528 24 re f
+0.160 0.430 0.310 rg 42 466 4 24 re f
+0.080 0.160 0.270 rg BT /F2 13 Tf 1 0 0 1 55 473 Tm (Permisos por rol) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 444 Tm (Administrador) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 429 Tm (Lista y crea usuarios, cambia sus roles/estados y puede editar tickets.) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 412 Tm (Vendedor) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 397 Tm (Consulta, crea, edita y elimina productos.) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 380 Tm (Cliente) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 365 Tm (Consulta productos, registra una compra y solo consulta sus propios tickets.) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 352 Tm (El backend toma su id desde el JWT.) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 335 Tm (Respuestas) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 320 Tm (401 significa que falta un token valido; 403 indica que el usuario autenticado) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 307 Tm (no tiene permiso.) Tj ET
+0.930 0.960 0.940 rg 42 277 528 24 re f
+0.160 0.430 0.310 rg 42 277 4 24 re f
+0.080 0.160 0.270 rg BT /F2 13 Tf 1 0 0 1 55 284 Tm (Flujo de prueba con Postman) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 255 Tm (1. Registro) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 240 Tm (POST /api/auth/register con nombre, email y password. El registro publico) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 227 Tm (asigna siempre el rol Cliente.) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 210 Tm (2. Login) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 195 Tm (POST /api/auth/login con email y password; la respuesta incluye un token con) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 182 Tm (vencimiento de una hora.) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 165 Tm (3. Ruta protegida) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 150 Tm (En Authorization elige Bearer Token y pega el token. Prueba GET /api/auth/me o) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 137 Tm (GET /api/Productos.) Tj ET
+0.160 0.430 0.310 rg BT /F2 10.2 Tf 1 0 0 1 56 120 Tm (4. Compra) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 105 Tm (POST /api/Tickets con Authorization Bearer y un body con productos e) Tj ET
+0.140 0.180 0.230 rg BT /F1 9.5 Tf 1 0 0 1 68 92 Tm (id_producto/cantidad. No enviar id_usuario: se obtiene del token.) Tj ET
+0.820 0.850 0.870 RG 0.7 w 42 46 m 570 46 l S
+0.380 0.430 0.480 rg BT /F1 8.5 Tf 1 0 0 1 44 29 Tm (Backend Dietetica | Node.js + Express + Sequelize + SQLite) Tj ET
+0.160 0.430 0.310 rg BT /F2 8.5 Tf 1 0 0 1 525 29 Tm (3) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 9 0 R >>
+endobj
+xref
+0 11
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000134 00000 n 
+0000000231 00000 n 
+0000000333 00000 n 
+0000004157 00000 n 
+0000004293 00000 n 
+0000008631 00000 n 
+0000008767 00000 n 
+0000013092 00000 n 
+trailer
+<< /Size 11 /Root 1 0 R >>
+startxref
+13229
+%%EOF

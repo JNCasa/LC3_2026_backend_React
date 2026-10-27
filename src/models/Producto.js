@@ -1,8 +1,8 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../db.js";
 
-export const Producto = sequelize.define(
-  "Producto",
+export const Productos = sequelize.define(
+  "Productos",
   {
     id_producto: {
       type: DataTypes.INTEGER,
@@ -37,7 +37,7 @@ export const Producto = sequelize.define(
     },
   },
   {
-    tableName: "Producto",
+    tableName: "Productos",
     timestamps: false,
   },
 );

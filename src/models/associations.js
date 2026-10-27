@@ -1,22 +1,23 @@
-import { Producto } from "./Producto.js";
-import { Ticket } from "./Ticket.js";
-import { TicketProducto } from "./TicketProducto.js";
-import { Usuario } from "./Usuario.js";
+import { Productos } from "./Producto.js";
+import { Tickets } from "./Ticket.js";
+import { DetallesTicket } from "./DetalleTicket.js";
+import { Usuarios } from "./Usuario.js";
 
-Usuario.hasMany(Ticket, { foreignKey: "id_usuario", as: "tickets" });
-Ticket.belongsTo(Usuario, { foreignKey: "id_usuario", as: "usuario" });
-
-Ticket.hasMany(TicketProducto, {
+Usuarios.hasMany(Tickets, { foreignKey: "id_usuario", as: "tickets" });
+Tickets.belongsTo(Usuarios, { foreignKey: "id_usuario", as: "usuario" });
+Tickets.hasMany(DetallesTicket, {
   foreignKey: "id_ticket",
-  as: "detalles",
+  as: "productos",
 });
-TicketProducto.belongsTo(Ticket, { foreignKey: "id_ticket", as: "ticket" });
-
-Producto.hasMany(TicketProducto, {
+DetallesTicket.belongsTo(Tickets, {
+  foreignKey: "id_ticket",
+  as: "ticket",
+});
+Productos.hasMany(DetallesTicket, {
   foreignKey: "id_producto",
-  as: "ventas",
+  as: "detalles_ticket",
 });
-TicketProducto.belongsTo(Producto, {
+DetallesTicket.belongsTo(Productos, {
   foreignKey: "id_producto",
   as: "producto",
 });

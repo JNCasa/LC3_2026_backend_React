@@ -1,8 +1,8 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../db.js";
 
-export const Usuario = sequelize.define(
-  "Usuario",
+export const Usuarios = sequelize.define(
+  "Usuarios",
   {
     id_usuario: {
       type: DataTypes.INTEGER,
@@ -31,7 +31,7 @@ export const Usuario = sequelize.define(
     },
   },
   {
-    tableName: "Usuario",
+    tableName: "Usuarios",
     timestamps: false,
     defaultScope: {
       attributes: { exclude: ["password"] },

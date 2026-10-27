@@ -1,25 +1,31 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../db.js";
 
-export const Ticket = sequelize.define(
-  "Ticket",
+export const Tickets = sequelize.define(
+  "Tickets",
   {
     id_ticket: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    fecha: {
-      type: DataTypes.DATEONLY,
-      allowNull: false,
-    },
     id_usuario: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    monto_total: {
+      type: DataTypes.REAL,
+      allowNull: false,
+      validate: { min: Number.MIN_VALUE },
+    },
+    fecha: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
   },
   {
-    tableName: "Ticket",
+    tableName: "Tickets",
     timestamps: false,
   },
 );

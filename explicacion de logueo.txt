@@ -1,0 +1,33 @@
+Explicacion de logueo
+
+1. El cliente envia una solicitud POST a /api/auth/login con el email y la contrasena en formato JSON.
+
+2. Express recibe la solicitud, interpreta el JSON y la ruta de autenticacion llama a la funcion login.
+
+3. El login normaliza el email (quita espacios de los extremos y lo convierte a minusculas). Luego valida que el email tenga un formato correcto y que la contrasena sea un texto no vacio de hasta 72 bytes. Si los datos no son validos, responde con el estado 400.
+
+4. El servidor busca en la base de datos una cuenta con ese email. La consulta incluye la contrasena guardada, que normalmente se excluye de las consultas publicas.
+
+5. Si la cuenta no existe o no esta en estado Activo, el servidor responde con el estado 401 y un mensaje generico.
+
+6. El servidor verifica la contrasena:
+   - Si esta guardada con bcrypt, la compara de forma segura con la contrasena recibida.
+   - Si pertenece a una cuenta antigua y todavia esta en texto plano, la compara directamente. Si coincide, la convierte a bcrypt y guarda el resultado.
+   - Si no coincide, responde con el estado 401.
+
+7. Si las credenciales son correctas, el servidor crea un token JWT firmado. El token contiene el identificador del usuario y su rol, y vence despues de una hora.
+
+8. El servidor responde con el token y los datos publicos del usuario (identificador, nombre, email, rol y estado). No devuelve la contrasena.
+
+9. Para usar una ruta protegida, el cliente envia el token en el encabezado:
+   Authorization: Bearer <token>
+
+10. El middleware de autenticacion verifica que el token sea valido y no haya vencido. Tambien consulta la cuenta para confirmar que siga activa y que su rol no haya cambiado. Si todo esta correcto, permite que la solicitud continue y deja los datos del usuario disponibles para la ruta.
+
+11. Si el token falta, es invalido o vencio, el servidor rechaza la solicitud. Si el usuario esta autenticado pero su rol no tiene permiso para una operacion, responde con un error de permisos.
+
+Resumen:
+El login comprueba las credenciales y entrega un token. El cliente presenta ese token en las solicitudes posteriores para demostrar quien es; el servidor lo verifica y aplica los permisos correspondientes.
+
+Nota: los token tienen una hr de vto ---> expiresIn: "1h"
+Eso le indica a la biblioteca JWT que el token expire una hora después de ser creado. Luego, en auth.js, el middleware verifica el token; si ya venció, rechaza la solicitud con un 401.

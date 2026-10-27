@@ -1,4 +1,4 @@
-import { Producto } from "../models/Producto.js";
+import { Productos } from "../models/Producto.js";
 
 const writableFields = [
   "titulo",
@@ -47,7 +47,7 @@ function parseId(value) {
 
 export async function findProducts(_req, res, next) {
   try {
-    const products = await Producto.findAll({
+    const products = await Productos.findAll({
       order: [["id_producto", "ASC"]],
     });
     res.json(products);
@@ -63,7 +63,7 @@ export async function findProduct(req, res, next) {
   }
 
   try {
-    const product = await Producto.findByPk(id);
+    const product = await Productos.findByPk(id);
     if (!product) {
       return res.status(404).json({ message: "Producto no encontrado." });
     }
@@ -80,7 +80,7 @@ export async function createProduct(req, res, next) {
   }
 
   try {
-    const createdProduct = await Producto.create(product);
+    const createdProduct = await Productos.create(product);
     res.status(201).json(createdProduct);
   } catch (err) {
     next(err);
@@ -99,7 +99,7 @@ export async function updateProduct(req, res, next) {
   }
 
   try {
-    const existingProduct = await Producto.findByPk(id);
+    const existingProduct = await Productos.findByPk(id);
     if (!existingProduct) {
       return res.status(404).json({ message: "Producto no encontrado." });
     }
@@ -118,7 +118,7 @@ export async function deleteProduct(req, res, next) {
   }
 
   try {
-    const product = await Producto.findByPk(id);
+    const product = await Productos.findByPk(id);
     if (!product) {
       return res.status(404).json({ message: "Producto no encontrado." });
     }
