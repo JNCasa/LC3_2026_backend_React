@@ -46,6 +46,37 @@ export async function createUser(req, res, next) {
   }
 }
 
+export async function deleteUser(req, res, next) {
+  const id_usuario = parseUserId(req.params.id);
+  if (!id_usuario) {
+    return res.status(400).json({ message: "El id_usuario debe ser un entero positivo." });
+  }
+
+  try {
+    const usuario = await Usuarios.findByPk(id_usuario);
+    if (!usuario) {
+      return res.status(404).json({ message: "No se encontró el usuario solicitado." });
+    }
+
+    if (usuario.id_usuario === req.user.id_usuario) {
+      return res.status(409).json({ message: "No podés eliminar tu propia cuenta." });
+    }
+
+    await usuario.destroy();
+    return res.status(204).send();
+  } catch (error) {
+    if (
+      error.name === "SequelizeForeignKeyConstraintError" ||
+      error.parent?.code === "SQLITE_CONSTRAINT_FOREIGNKEY"
+    ) {
+      return res.status(409).json({
+        message: "No se puede eliminar el usuario porque tiene registros relacionados.",
+      });
+    }
+    return next(error);
+  }
+}
+
 export async function updateUserAccess(req, res, next) {
   const id_usuario = parseUserId(req.params.id);
   if (!id_usuario) {
