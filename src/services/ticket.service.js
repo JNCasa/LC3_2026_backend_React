@@ -14,7 +14,13 @@ const ticketIncludes = [
   {
     model: DetallesTicket,
     as: "productos",
-    attributes: ["id_producto", "cantidad", "importe"],
+    attributes: [
+      "id_producto",
+      "nombre_producto",
+      "precio_unitario",
+      "cantidad",
+      "importe",
+    ],
     include: [
       {
         model: Productos,
@@ -65,9 +71,16 @@ function validatePurchaseInput(body) {
 
 function calculateTicketLines(productQuantities, productsById) {
   const ticketLines = [...productQuantities].map(([id_producto, cantidad]) => {
-    const precio = Number(productsById.get(id_producto).precio);
+    const product = productsById.get(id_producto);
+    const precio = Number(product.precio);
     const importe = Number((precio * cantidad).toFixed(2));
-    return { id_producto, cantidad, importe };
+    return {
+      id_producto,
+      nombre_producto: product.nombre_producto,
+      precio_unitario: precio,
+      cantidad,
+      importe,
+    };
   });
   const monto_total = Number(
     (
@@ -138,7 +151,7 @@ export async function createTicket(req, res, next) {
   try {
     const transaction = await sequelize.transaction({
       type: Transaction.TYPES.IMMEDIATE,
-    });
+    });//Se abre una transacción en SQLite. Esto agrupa los cambios: si algo falla durante la compra, se revierten y no queda un ticket incompleto.
     try {
       const user = await Usuarios.findByPk(id_usuario, { transaction });
       if (!user) {
@@ -148,7 +161,7 @@ export async function createTicket(req, res, next) {
 
       const products = await Productos.findAll({
         where: { id_producto: [...productQuantities.keys()] },
-        attributes: ["id_producto", "precio"],
+        attributes: ["id_producto", "nombre_producto", "precio"],
         transaction,
       });
       const productsById = new Map(products.map((product) => [product.id_producto, product]));
@@ -223,13 +236,15 @@ export async function updateTicket(req, res, next) {
 
       const products = await Productos.findAll({
         where: { id_producto: [...productQuantities.keys()] },
-        attributes: ["id_producto", "precio"],
+        attributes: ["id_producto", "nombre_producto", "precio"],
         transaction,
       });
       const productsById = new Map(products.map((product) => [product.id_producto, product]));
       if (productsById.size !== productQuantities.size) {
         await transaction.rollback();
-        return res.status(400).json({ message: "Uno o más productos no existen." });
+        return res.status(400).json({
+          message: "Uno o más productos no existen.",
+        });
       }
 
       const existingLines = await DetallesTicket.findAll({

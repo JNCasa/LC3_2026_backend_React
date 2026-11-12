@@ -124,7 +124,7 @@ export async function deleteProduct(req, res, next) {
     }
 
     await product.destroy();
-    res.status(204).end();
+    return res.status(204).end();
   } catch (error) {
     next(error);
   }
